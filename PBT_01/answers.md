@@ -113,7 +113,207 @@ Thẻ <form>
     type="text": Để người dùng nhập từ khóa.
     type="button" hoặc type="submit": Cho nút bấm tìm kiếm (biểu tượng kính lúp).
     Đôi khi có thẻ <input type="hidden">: Dùng để gửi các tham số ẩn như mã định danh hoặc nguồn truy cập mà người dùng không nhìn thấy.
+Câu C1:
+<!-- 
+  TRANG CHI TIẾT SẢN PHẨM (Shopee/Tiki style)
+  Chỉ cấu trúc HTML, không nội dung thật
+-->
 
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết sản phẩm - iPhone 16</title>
+</head>
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header> <!-- header: chứa các thành phần giới thiệu/điều hướng chính của trang -->
+        <div class="logo"> <!-- div: khối trung tính để chứa logo, không có ý nghĩa ngữ nghĩa đặc biệt -->
+            <a href="/">Logo</a> <!-- a: liên kết về trang chủ -->
+        </div>
+        <form role="search"> <!-- form: dùng để gửi dữ liệu tìm kiếm; role="search" giúp trình đọc màn hình hiểu đây là chức năng tìm kiếm -->
+            <input type="search" placeholder="Tìm kiếm sản phẩm..."> <!-- input type="search": chuyên dụng cho ô tìm kiếm -->
+            <button type="submit">Tìm</button> <!-- button: nút tương tác để gửi form -->
+        </form>
+        <div class="user-actions"> <!-- div: nhóm các hành động của người dùng (giỏ hàng, đăng nhập) -->
+            <a href="/cart">Giỏ hàng</a>
+            <a href="/login">Đăng nhập</a>
+        </div>
+    </header>
+
+    <!-- ================= NAVIGATION (MENU CHÍNH) ================= -->
+    <nav> <!-- nav: khu vực chứa các liên kết điều hướng chính của trang -->
+        <ul> <!-- ul: danh sách không có thứ tự cho menu (vì các mục menu không cần theo thứ tự ưu tiên) -->
+            <li><a href="/">Trang chủ</a></li>
+            <li><a href="/electronics">Điện thoại</a></li>
+            <li><a href="/laptop">Laptop</a></li>
+            <li><a href="/accessories">Phụ kiện</a></li>
+            <li><a href="/promotion">Khuyến mãi</a></li>
+        </ul>
+    </nav>
+
+    <!-- ================= BREADCRUMB ================= -->
+    <nav aria-label="breadcrumb"> <!-- nav: đây là điều hướng phụ; aria-label giúp phân biệt với nav chính -->
+        <ol> <!-- ol: breadcrumb thể hiện thứ tự các cấp (Trang chủ > Điện thoại > iPhone 16) nên dùng danh sách có thứ tự -->
+            <li><a href="/">Trang chủ</a></li>
+            <li><a href="/category/dien-thoai">Điện thoại</a></li>
+            <li aria-current="page">iPhone 16</li> <!-- aria-current="page": báo cho trình đọc màn hình biết đây là trang hiện tại -->
+        </ol>
+    </nav>
+
+    <!-- ================= MAIN CONTENT (2 CỘT: SẢN PHẨM + SIDEBAR) ================= -->
+    <main> <!-- main: nội dung chính, duy nhất của trang -->
+
+        <!-- KHU VỰC CHI TIẾT SẢN PHẨM (CỘT TRÁI) -->
+        <div class="product-detail"> <!-- div: bao ngoài toàn bộ thông tin sản phẩm, chưa có thẻ semantic phù hợp hơn -->
+
+            <!-- === 1. KHU VỰC ẢNH SẢN PHẨM (5 ẢNH) === -->
+            <div class="product-gallery"> <!-- div: khu vực chứa thư viện ảnh -->
+                <div class="main-image"> <!-- div: ảnh chính lớn -->
+                    <img src="placeholder-main.jpg" alt="iPhone 16 - Ảnh chính"> <!-- img: hiển thị ảnh sản phẩm; alt: mô tả cho trình đọc màn hình -->
+                </div>
+                <div class="thumbnail-list"> <!-- div: nhóm ảnh nhỏ (thumbnail) -->
+                    <ul> <!-- ul: danh sách không thứ tự cho các thumbnail (vì không cần thứ tự) -->
+                        <li><img src="thumb1.jpg" alt="iPhone 16 - Góc 1"></li> <!-- li: từng thumbnail -->
+                        <li><img src="thumb2.jpg" alt="iPhone 16 - Góc 2"></li>
+                        <li><img src="thumb3.jpg" alt="iPhone 16 - Góc 3"></li>
+                        <li><img src="thumb4.jpg" alt="iPhone 16 - Góc 4"></li>
+                        <li><img src="thumb5.jpg" alt="iPhone 16 - Góc 5"></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- === 2. THÔNG TIN SẢN PHẨM (tên, giá, đánh giá sao, mô tả) === -->
+            <div class="product-info"> <!-- div: khu vực thông tin chi tiết -->
+
+                <h1>iPhone 16 Pro Max</h1> <!-- h1: tên sản phẩm là tiêu đề quan trọng nhất của trang -->
+
+                <div class="rating"> <!-- div: nhóm thông tin đánh giá -->
+                    <span class="stars">★★★★☆</span> <!-- span: inline, hiển thị số sao (dùng entity hoặc icon) -->
+                    <span class="review-count">(120 đánh giá)</span>
+                </div>
+
+                <div class="price"> <!-- div: khu vực giá tiền -->
+                    <span class="current-price">29.990.000 ₫</span> <!-- span: giá hiện tại -->
+                    <del class="old-price">32.990.000 ₫</del> <!-- del: giá cũ (đã bị gạch bỏ) -->
+                </div>
+
+                <div class="description"> <!-- div: mô tả sản phẩm -->
+                    <p>iPhone 16 Pro Max với chip A18 Pro, màn hình Super Retina XDR, camera 48MP...</p> <!-- p: đoạn văn bản mô tả -->
+                </div>
+
+                <!-- Nút thêm vào giỏ hàng -->
+                <button class="add-to-cart">Thêm vào giỏ</button> <!-- button: hành động thêm vào giỏ -->
+            </div>
+
+            <!-- === 3. BẢNG THÔNG SỐ KỸ THUẬT === -->
+            <div class="specifications"> <!-- div: khu vực thông số kỹ thuật -->
+                <h2>Thông số kỹ thuật</h2> <!-- h2: tiêu đề cấp 2 cho phần thông số -->
+                <table> <!-- table: dữ liệu dạng bảng, phù hợp nhất cho thông số kỹ thuật (dòng-cột) -->
+                    <tbody> <!-- tbody: nhóm phần thân của bảng -->
+                        <tr> <!-- tr: một hàng (màn hình) -->
+                            <th scope="row">Màn hình</th> <!-- th: tiêu đề cho hàng, scope="row" giúp hiểu đây là tiêu đề của hàng này -->
+                            <td>6.9 inch Super Retina XDR</td> <!-- td: dữ liệu tương ứng -->
+                        </tr>
+                        <tr>
+                            <th scope="row">Chip</th>
+                            <td>A18 Pro (3nm)</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">RAM</th>
+                            <td>12GB</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Camera sau</th>
+                            <td>48MP chính + 12MP tele + 12MP ultra-wide</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Pin</th>
+                            <td>4676 mAh</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- === 4. KHU VỰC ĐÁNH GIÁ/BÌNH LUẬN === -->
+            <div class="reviews"> <!-- div: khu vực đánh giá của người dùng -->
+                <h2>Đánh giá & Bình luận</h2> <!-- h2: tiêu đề phần -->
+
+                <!-- Form gửi bình luận -->
+                <form class="review-form"> <!-- form: gửi bình luận mới -->
+                    <label for="review-name">Tên của bạn</label> <!-- label: nhãn cho input, tăng khả năng truy cập -->
+                    <input type="text" id="review-name" placeholder="Nhập tên">
+
+                    <label for="review-text">Bình luận</label>
+                    <textarea id="review-text" rows="3" placeholder="Mời bạn để lại đánh giá..."></textarea> <!-- textarea: nhập văn bản nhiều dòng -->
+
+                    <button type="submit">Gửi bình luận</button>
+                </form>
+
+                <!-- Danh sách bình luận -->
+                <ul class="review-list"> <!-- ul: danh sách các bình luận (không cần thứ tự) -->
+                    <li> <!-- li: một bình luận -->
+                        <strong>Nguyễn Văn A</strong> <!-- strong: nhấn mạnh tên người dùng (in đậm) -->
+                        <span>★★★★★</span>
+                        <p>Máy đẹp, pin trâu, camera xuất sắc!</p>
+                    </li>
+                    <li>
+                        <strong>Trần Thị B</strong>
+                        <span>★★★★☆</span>
+                        <p>Màn hình quá đẹp, nhưng giá hơi cao.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- === 5. SIDEBAR: SẢN PHẨM TƯƠNG TỰ === -->
+        <aside class="similar-products"> <!-- aside: phần nội dung liên quan (sidebar) đến sản phẩm chính nhưng có thể tách rời -->
+            <h2>Sản phẩm tương tự</h2> <!-- h2: tiêu đề phần sản phẩm tương tự -->
+            <ul> <!-- ul: danh sách các sản phẩm gợi ý -->
+                <li> <!-- li: một sản phẩm -->
+                    <article class="product-card"> <!-- article: mỗi sản phẩm là một nội dung độc lập, có thể tái sử dụng -->
+                        <img src="similar1.jpg" alt="iPhone 15 Pro Max">
+                        <h3>iPhone 15 Pro Max</h3> <!-- h3: tên sản phẩm (cấp thấp hơn h2 của aside) -->
+                        <p>28.990.000 ₫</p>
+                    </article>
+                </li>
+                <li>
+                    <article class="product-card">
+                        <img src="similar2.jpg" alt="Samsung Galaxy S24 Ultra">
+                        <h3>Samsung Galaxy S24 Ultra</h3>
+                        <p>26.990.000 ₫</p>
+                    </article>
+                </li>
+                <li>
+                    <article class="product-card">
+                        <img src="similar3.jpg" alt="Xiaomi 14 Ultra">
+                        <h3>Xiaomi 14 Ultra</h3>
+                        <p>21.990.000 ₫</p>
+                    </article>
+                </li>
+            </ul>
+        </aside>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer> <!-- footer: chứa thông tin chân trang, bản quyền, liên hệ -->
+        <div class="footer-links"> <!-- div: nhóm các liên kết footer -->
+            <ul>
+                <li><a href="/about">Giới thiệu</a></li>
+                <li><a href="/privacy">Chính sách bảo mật</a></li>
+                <li><a href="/terms">Điều khoản sử dụng</a></li>
+                <li><a href="/contact">Liên hệ</a></li>
+            </ul>
+        </div>
+        <div class="copyright"> <!-- div: bản quyền -->
+            <p>&copy; 2026 Công ty TNHH Bán lẻ. Tất cả quyền được bảo lưu.</p> <!-- p: đoạn văn bản copyright -->
+        </div>
+    </footer>
+
+</body>
+</html>
 câu C2:
     Thứ nhất là SEO: mấy thẻ như <header>, <nav>, <article> giúp Google hiểu cấu trúc trang rõ hơn. Nếu toàn <div> thì nội dung chính, menu hay footer đều giống nhau → khó index tốt.
     Thứ hai là Accessibility: người dùng dùng screen reader sẽ dựa vào semantic HTML để di chuyển nhanh trong trang (ví dụ nhảy đến menu hoặc nội dung chính). Nếu chỉ dùng <div> thì gần như mất hết lợi ích này, lại phải thêm ARIA khá rắc rối.
