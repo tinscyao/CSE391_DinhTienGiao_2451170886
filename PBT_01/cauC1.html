@@ -1,0 +1,200 @@
+<!-- 
+  TRANG CHI TIẾT SẢN PHẨM (Shopee/Tiki style)
+  Chỉ cấu trúc HTML, không nội dung thật
+-->
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết sản phẩm - iPhone 16</title>
+</head>
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header> <!-- header: chứa các thành phần giới thiệu/điều hướng chính của trang -->
+        <div class="logo"> <!-- div: khối trung tính để chứa logo, không có ý nghĩa ngữ nghĩa đặc biệt -->
+            <a href="/">Logo</a> <!-- a: liên kết về trang chủ -->
+        </div>
+        <form role="search"> <!-- form: dùng để gửi dữ liệu tìm kiếm; role="search" giúp trình đọc màn hình hiểu đây là chức năng tìm kiếm -->
+            <input type="search" placeholder="Tìm kiếm sản phẩm..."> <!-- input type="search": chuyên dụng cho ô tìm kiếm -->
+            <button type="submit">Tìm</button> <!-- button: nút tương tác để gửi form -->
+        </form>
+        <div class="user-actions"> <!-- div: nhóm các hành động của người dùng (giỏ hàng, đăng nhập) -->
+            <a href="/cart">Giỏ hàng</a>
+            <a href="/login">Đăng nhập</a>
+        </div>
+    </header>
+
+    <!-- ================= NAVIGATION (MENU CHÍNH) ================= -->
+    <nav> <!-- nav: khu vực chứa các liên kết điều hướng chính của trang -->
+        <ul> <!-- ul: danh sách không có thứ tự cho menu (vì các mục menu không cần theo thứ tự ưu tiên) -->
+            <li><a href="/">Trang chủ</a></li>
+            <li><a href="/electronics">Điện thoại</a></li>
+            <li><a href="/laptop">Laptop</a></li>
+            <li><a href="/accessories">Phụ kiện</a></li>
+            <li><a href="/promotion">Khuyến mãi</a></li>
+        </ul>
+    </nav>
+
+    <!-- ================= BREADCRUMB ================= -->
+    <nav aria-label="breadcrumb"> <!-- nav: đây là điều hướng phụ; aria-label giúp phân biệt với nav chính -->
+        <ol> <!-- ol: breadcrumb thể hiện thứ tự các cấp (Trang chủ > Điện thoại > iPhone 16) nên dùng danh sách có thứ tự -->
+            <li><a href="/">Trang chủ</a></li>
+            <li><a href="/category/dien-thoai">Điện thoại</a></li>
+            <li aria-current="page">iPhone 16</li> <!-- aria-current="page": báo cho trình đọc màn hình biết đây là trang hiện tại -->
+        </ol>
+    </nav>
+
+    <!-- ================= MAIN CONTENT (2 CỘT: SẢN PHẨM + SIDEBAR) ================= -->
+    <main> <!-- main: nội dung chính, duy nhất của trang -->
+        
+        <!-- KHU VỰC CHI TIẾT SẢN PHẨM (CỘT TRÁI) -->
+        <div class="product-detail"> <!-- div: bao ngoài toàn bộ thông tin sản phẩm, chưa có thẻ semantic phù hợp hơn -->
+            
+            <!-- === 1. KHU VỰC ẢNH SẢN PHẨM (5 ẢNH) === -->
+            <div class="product-gallery"> <!-- div: khu vực chứa thư viện ảnh -->
+                <div class="main-image"> <!-- div: ảnh chính lớn -->
+                    <img src="https://cdn2.cellphones.com.vn/insecure/rs:fill:0:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/i/p/iphone-16-1_2_1_2_1.png" alt="iPhone 16 - Ảnh chính"> <!-- img: hiển thị ảnh sản phẩm; alt: mô tả cho trình đọc màn hình -->
+                </div>
+                <div class="thumbnail-list"> <!-- div: nhóm ảnh nhỏ (thumbnail) -->
+                    <ul> <!-- ul: danh sách không thứ tự cho các thumbnail (vì không cần thứ tự) -->
+                        <li><img src="https://cdn-media.sforum.vn/storage/app/media/aivy/anh-iphone-16-9.jpg" alt="iPhone 16 - Góc 1"width="800px"></li> <!-- li: từng thumbnail -->
+                        <li><img src="https://cdn-media.sforum.vn/storage/app/media/aivy/anh-iphone-16-7.jpg" alt="iPhone 16 - Góc 2" width="800px"></li>
+                        <li><img src="https://cdn-media.sforum.vn/storage/app/media/aivy/anh-iphone-16-6.jpg" alt="iPhone 16 - Góc 3" width="800px"></li>
+                        <li><img src="https://cdn-media.sforum.vn/storage/app/media/aivy/anh-iphone-16-5.jpg" alt="iPhone 16 - Góc 4" width="800px"></li>
+                        <li><img src="https://cdn-media.sforum.vn/storage/app/media/aivy/anh-iphone-16-2.jpg" alt="iPhone 16 - Góc 5" width="800px"></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- === 2. THÔNG TIN SẢN PHẨM (tên, giá, đánh giá sao, mô tả) === -->
+            <div class="product-info"> <!-- div: khu vực thông tin chi tiết -->
+                
+                <h1>iPhone 16 Pro Max</h1> <!-- h1: tên sản phẩm là tiêu đề quan trọng nhất của trang -->
+                
+                <div class="rating"> <!-- div: nhóm thông tin đánh giá -->
+                    <span class="stars">⭐⭐⭐⭐☆</span> <!-- span: inline, hiển thị số sao (dùng entity hoặc icon) -->
+                    <span class="review-count">(120 đánh giá)</span>
+                </div>
+                
+                <div class="price"> <!-- div: khu vực giá tiền -->
+                    <span class="current-price">29.990.000 ₫</span> <!-- span: giá hiện tại -->
+                    <del class="old-price">32.990.000 ₫</del> <!-- del: giá cũ (đã bị gạch bỏ) -->
+                </div>
+                
+                <div class="description"> <!-- div: mô tả sản phẩm -->
+                    <p>iPhone 16 Pro Max với chip A18 Pro, màn hình Super Retina XDR, camera 48MP...</p> <!-- p: đoạn văn bản mô tả -->
+                </div>
+
+                <!-- Nút thêm vào giỏ hàng -->
+                <button class="add-to-cart">Thêm vào giỏ</button> <!-- button: hành động thêm vào giỏ -->
+            </div>
+
+            <!-- === 3. BẢNG THÔNG SỐ KỸ THUẬT === -->
+            <div class="specifications"> <!-- div: khu vực thông số kỹ thuật -->
+                <h2>Thông số kỹ thuật</h2> <!-- h2: tiêu đề cấp 2 cho phần thông số -->
+                <table> <!-- table: dữ liệu dạng bảng, phù hợp nhất cho thông số kỹ thuật (dòng-cột) -->
+                    <tbody> <!-- tbody: nhóm phần thân của bảng -->
+                        <tr> <!-- tr: một hàng (màn hình) -->
+                            <th scope="row">Màn hình</th> <!-- th: tiêu đề cho hàng, scope="row" giúp hiểu đây là tiêu đề của hàng này -->
+                            <td>6.9 inch Super Retina XDR</td> <!-- td: dữ liệu tương ứng -->
+                        </tr>
+                        <tr>
+                            <th scope="row">Chip</th>
+                            <td>A18 Pro (3nm)</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">RAM</th>
+                            <td>12GB</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Camera sau</th>
+                            <td>48MP chính + 12MP tele + 12MP ultra-wide</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Pin</th>
+                            <td>4676 mAh</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- === 4. KHU VỰC ĐÁNH GIÁ/BÌNH LUẬN === -->
+            <div class="reviews"> <!-- div: khu vực đánh giá của người dùng -->
+                <h2>Đánh giá & Bình luận</h2> <!-- h2: tiêu đề phần -->
+                
+                <!-- Form gửi bình luận -->
+                <form class="review-form"> <!-- form: gửi bình luận mới -->
+                    <label for="review-name">Tên của bạn</label> <!-- label: nhãn cho input, tăng khả năng truy cập -->
+                    <input type="text" id="review-name" placeholder="Nhập tên">
+                    
+                    <label for="review-text">Bình luận</label>
+                    <textarea id="review-text" rows="3" placeholder="Mời bạn để lại đánh giá..."></textarea> <!-- textarea: nhập văn bản nhiều dòng -->
+                    
+                    <button type="submit">Gửi bình luận</button>
+                </form>
+                
+                <!-- Danh sách bình luận -->
+                <ul class="review-list"> <!-- ul: danh sách các bình luận (không cần thứ tự) -->
+                    <li> <!-- li: một bình luận -->
+                        <strong>Nguyễn Văn A</strong> <!-- strong: nhấn mạnh tên người dùng (in đậm) -->
+                        <span>⭐⭐⭐⭐⭐</span>
+                        <p>Máy đẹp, pin trâu, camera xuất sắc!</p>
+                    </li>
+                    <li>
+                        <strong>Trần Thị B</strong>
+                        <span>⭐⭐⭐⭐☆</span>
+                        <p>Màn hình quá đẹp, nhưng giá hơi cao.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- === 5. SIDEBAR: SẢN PHẨM TƯƠNG TỰ === -->
+        <aside class="similar-products"> <!-- aside: phần nội dung liên quan (sidebar) đến sản phẩm chính nhưng có thể tách rời -->
+            <h2>Sản phẩm tương tự</h2> <!-- h2: tiêu đề phần sản phẩm tương tự -->
+            <ul> <!-- ul: danh sách các sản phẩm gợi ý -->
+                <li> <!-- li: một sản phẩm -->
+                    <article class="product-card"> <!-- article: mỗi sản phẩm là một nội dung độc lập, có thể tái sử dụng -->
+                        <img src="https://cdn2.cellphones.com.vn/insecure/rs:fill:0:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/v/n/vn_iphone_15_pink_pdp_image_position-1a_pink_color_2_2_1_2.jpg" alt="iPhone 15 Pro Max" width="300px">
+                        <h3>iPhone 15 Pro Max</h3> <!-- h3: tên sản phẩm (cấp thấp hơn h2 của aside) -->
+                        <p>28.990.000 ₫</p>
+                    </article>
+                </li>
+                <li>
+                    <article class="product-card">
+                        <img src="data:image/webp;base64,UklGRhgRAABXRUJQVlA4IAwRAAAwUgCdASq/AL8APkUejEQioaEU6gaEKAREtLb14AAykwwIQ+GPTXw/85Pxj3O9jDQH2bYU/637Z/nb3H8Aj2Xwm4CPm98Uv/Q9J/sb7AH8s/on+09b/FL+4/7/9gPgC/l39j/4P3c/UX/kf+//YelH6l/8X+Z+BP9dP+p2EP3S9j79e0j2RFFd+w7EVCfKblho/4Ht9bjGdShiMti0/rfzrnnSvbuJjP6/4N3olW9h2ycCPgT1EvziyjARSLeObJM6SW2cyiHl9cUOd+4+5VeODZh7mRIM0UZ94JNwFMuF0TzSf8do19jVZ3zU4oXdMas6onJkXvu0Ipri4k0KA3H4zj/ikAxsSd/4WgbGLLvjmcMHwgeUi3fFDtZetybHh1RpmOGlzcPgdVI20e5IPfAATJWv6PBs1x0clwIzcF5PBUwaAFalUPXnH/oUESo6idxsMNxH2BrHRQT9pYap/O+zPkR13LSrb5Xc1zqTAixKhtEWViPgNqAPDsXCYH/jkaRw963W09jgdca1uL37pxXUftC9NkYR+ev9WmwAcXlYxpg6hEH/CcNHnYThtb22oRnULnRqk2aDbgG7+GvuHR88K5/28t9v8WecRhFdLG1nBZkPWUHoFlsyfydUHVnUELR2PbjIGl3t+G6/xYlPQ+rhTchm6Vwl1Q+lrc0nBsiIgxy1yeAuXo/OivbpBMXn5LbrpIrzQR7bBB+z8XZ5bwjJ/fetEGhziH9F5BCswm4vecKYA6cLAE+LfVX5xqQcKrcpy8Il217kM2P3+qi6rUhrMX4J5qcBXUwk+OPmJiHANnpv0JC3weVXkf4Oe07BIncRAGiXKZ4eznqSLQ/XD62rx07iNfr8u718IoLM/K1Xwk5/F9YR296ArmAA/uWtrTbnxJ99Z7M8/9qSTOZ5Xa00iTPTnotDOwwrp+nsZTyesBVPVdgTGrUXkq0D7T/ikCD9DOatRh/+n+nPkTTToDpxuKsYHrJyQU+xb7bHMCEF3/+yslR/Fh43z5HkW6150sfvB15xWXGs5m/rThigmxZEJCTKfR/jnSa41wveWpClKG7TbRipk8a+gADrKvg/uP6dw9f5h7NrC4wmz/2IDjFvIRFFMQPU4rO9k/8TFCcFAyROYn00moVhpuVsPHjLe6uAL/M788c3q0McNBdkKve2nL9uUY1AR2EdHD/0Zc96ex6xXXAKYUK/BtEtn62oDy9uTpO3GxuSwDx3b7csCebKBjvZxPZO4v4r3SK5mHy7Vj8e93rTUD7QId19l0v/4662RYB77nNONC75y9z1dRN7Xv0vibdp2bSEdqWyGLjNhw8LhhqWXZSuAvHd6gLM6uIgRg7nLM87BxMLhy5QAQhkjFK612sHhhXMU0HDbo0+MYjgD5/1TnpMOXZdaOgeM9Qf9A/80Z+mXlWymKXmjbl/IxaMA78SnkzQXt9730iJj2cwEYGQsqt0akqgnbqBeXChvGWToTCFkCIZYTVs7hkZEePwQxnrDURe/kdP/M1FIA7dK4GN6sf6kMg4kgkXTuxglfvt2uURVJc4a6s3H6ljotrjrJC3lHVCuCMfcNJKfaJQayS6DBmrDlypW2F4AZAA1PEVru5a94QoPZhuCNeXVpGUIM0PE1yCeqHy0cdWsKpKvR2Gu26ztg1JX3IqMw1qqZJZ5qlm00vxfiifge96YWgziwZ4MTH9xUQVpYuyLaWLNuNk9T96AytNQAD2cFBS7ZeOB+4TiBWN6Yr0KAVOVGtYmzVO1E4VxBdqfk6O52E92gGuL8aKtokmrdudaREr1H+YQClue/7xumnmzVUBMSiJBnmXdPLfs7pkiFa/Z/Tl6kuOLew3NzcjHDRU9omKYeQ9C0VEQ/0hwJeA3l5ej2MeeZK/4qC5p7+92pRInxENGJdD99KN0Vt30YpWnlMenf8Iw4jn+CT3Eu9+SgAmm4tjgU6Eo60xRTah9HaxOqhmjjg8b5me2uJj3sqG4IRa+e7L/if0jxg/BggA0JNLGSOD/C/1QwZRSh8RSk7ksMQvT2Hm6LV0CPSw4UJt01IkJtY0JPxdI4gap5k9uPDl699bPLFofjE2ST0ZtcQnRS2wUdgnbNycMpsiXUhJjNvRkagYjCJiZjQNERlmlPNccwfcz62M61Zn74AosiuBAOQ00JKkNaABwPDw14/efCnO61vBacnuRu5zT3wyM5HHgiuBtjTaNwiCNyHtdRS9xXluZcAbMtjcCrHPPxMaqW7ohWcduaX9lI34cKjol0hq8llQGDAsQUo/kkaXxn4mjjdGqeowYSRSSaf7Gi20EMGHsGxJ4lUnLnI+fwEsxeqeFba7L7/QuGsYiXNh1mLRHScqiUTQCBYIgukZ7J/pTspLl8WhdLggHl6N4n8vg/mFFuoXvdWQB8flm4QKGk0wHOw+beP4xskZtLx3RyXU4e+GY7plGtd0KAW37DsgnvbG3cQcUKiYXGXG8yjXOStHPwJv4SHEQ0FeiVcKTCp7SwPQeMfsRcS027V/n40onFuU4+2rifsOHpmExuE75x1k6of4XFX8yWE6gvup94MW3Z9E8UNz7a1JECTQd+Yu14eUwEPo0cIKMSE2EIU1VbR6+jg47LmnaZeaqSzt/iM76RhSVzueQrovds2vQnYmvyPk6OblPTIBWtN2qcSY56xD4K0QaSVgpdNSQgUUC2IIxqRNnALNIKYasGNg3JQcgcoF45QjZexF2HPwcogr1XYymdyf8TcaDRM6gZx/N/zADcLTCJc2RvcTF8u5lKhlo7lbgdEHjr80H33NtfYxJmPLZwNyIHI+GbadQOWNEMJ4AMhhDmFNQngQgKnjTQpymhpvt554WgtSDdcP/u44CDitzO5vpvzN8sY3fTEDHcPubCXX/ZZf9OIs6AAfG3X+2Dxdt6GSD7MJjAIyxAaic89chXHUUekBqdK5+CpWl6Hp003/7oBedtXqCv7xNzVFfHYZz3m4vdugbTMcy+Y8qga9KcUIHNNWCzqm1kq9MGJVR6lgHdD4CZ1Mgz82cOUB/2oq7BhsSF5JljOPhLV7MD0EeC/y172Fbq9hA4lISKRbWmaK4pDLsUgtnJm6pc+h4EaEWFHuYThRWKlPypEdQK5BgA0YehTnw/lbnNTGkbYUInsPszyREBncQ6dzAS7peqrOtJ/sn/0pRiYtBjuEGoJJERUerokGFRfrWwt2TeOLfhvUmAwo2KAqwME8r4ygVS0JEqHS2XXWG4geLv10ayh/NUyAAiJQCpQgsk2S3jAyZ7thmafa0iPpvWJDyQRqfZfl+2yd/ORv/OQ7rTm1vEAWzBV8a4XEhc+/4FCFDwK19ZvzHmc+4chi+7rdJEuoIkb0xVSLK6ewWBP1FwdG5e7KcMEJo+B52bn69BNycGAY3YPC5hnC7wcLGjJHmfRf4DCjsOEUzRGWF47w8JIOS/MmdIn97y2XEVub7dDN/rpl3/wMsrHsXOb83Dy0SzxGCe2IJosNIFmVkLSlYVY10uX6vLoO1JwMWz5fsJfclCbztCN42Glt2hKtk+i0p/dhgukSpAMKkAcwEXsdvWd94JGduAKLJE2FBDc+jSz+WFSuJc9vEbCqRv2fYZ8BZ0/o0Asrm+rYqTTzRtmChOVSEp0qfq8skEtha18lXZwI5QHyinyvVQyG+hW/BaQCrze+AGmWYzBI6LusRE4wk5Nl6IRnnuxwiZfG83N8BONB3cIjZKYSedJTcFXPww4eMph5wIS6+xghq94kOS4lED9J9q5oZR+0dgj6TYvLNWtuNVG1t2Knf1phqbM9U0QzHPr83n4mr7/7vbMuAyyC8qizMm2ujlEhD0foQY+U+4DE0lIvhraBAMVhJ7EqLsZ7paw0Car9cTHoSB2zO55A/k7T4uH0b6LurA8Gi0pDxOuLwlLMi5e3B5o1BByAFxDHg0SUjv4o5K689GdY0tTlgx07Bylg+kwqmfvCuuo4lxrQieHm+HiL5ucJrm5eEJvFtahsb8OfdKcnumLR7GV/2lLG92cu2LKIMz3DxumIsMPEnTzX6Pudb+CFt0YDA3cac2XKbgst7OBBPHx6ZAFZIPwtfWaOemlVN9nDroV0edRXMKn/Ub2fyw04uEQ1QSX/baizuR6VTPdcYQAGP6QOvLgU00oylU7NqolgkndE6K0ZOgqL6OxlMoVhKQkK8dxPslg0eGsswhjYdq++LMe5bLr5ZXlKD5cxL2vafJEREUuryJGCau9KVotQ9lfttJxhZwJ2Q8rSOPIBWbCw+IuKvUz638uIKwMSDsXDEthQBF8/bAsK0tYRdSoU0rVyHD4hHfUO98apBgKqlQCQ9MiFV2k1SKBObKsk2mIgEAFqxgrvR7MNvWyKgk5YYK8AvL/H6CTEBwPbkt2ey+dFTNdMEsNy/gLvzOOtxmSatka6V0R+U+XlVxrcfcvw0fsHhBPwlXuxnQXMf4auUTc4gn4QwTJTMEa2L9nAKm2qQglXneZNe3Nf93nRZ/LnNbRydUjvlTmST/hFsVhDy7Fv+umGgnz2oXUkgKU0Sn+ABrhiChiaI6O82ogEWbtHVG3hZj4Nzz5QUTZL+mkXYiLnb0UPmoEMl+DlsV3DKPOmSZy/fCYozTr8cEviLZll/Oz/psUDjrlDnWqq6lgPjZ1Y/s4bdS/AhnNeqppnfdzVI3CxI4ME66SbW43uJcD1vlYpP5G1WuUUaWa+p0Bx6+Ec/+F87V683vQBpk9Ra+FaGFvNaCOi7TGNFATgcA8fCnaH154tAaaE2h36leYDuBKseCuwMBP/o8dcRFeNodPsQTAP1jzMUmf58LIeVaceRT/GAW074U7nniA8ReNlmnQn+aXFDWCPrGzTaSU/iWnQTcDCQ4XuHapo6F0qUBJQ/VeaPBuoitLbHzy7SrJ4+a2Y5VzjPb25qS6OPOMFifnkBZQcX1t4RaNt0WCbhSd7MNrbjwolEv/dxeRxLNaxMLXqgwTOc9FeUI+EbsfQuQ7S1Ig/vFLZfyzFxZr9j2iDVrnalCW+6IbhNwr/98KT9XDQe9ZKutEwY+Ulo36rybOfTFMVEk7uXgTjps6bnsFuB3GbvS+YH/VzaBNwVegq2CyhyQx0/s42/iI9WqhR7EVc3fllsSEso0ep1xtyGhNdZ//gydcNPSgKZRPPF5l9o8lbptyLh6apQvzlP36SU8I6vccsAJ0M78soKc8TObjukBpYnDtl4ujfj2NlBRphSX8nTxRRRHa2KrnceEUpT96MfALMz0x/3WConJGzawGfnvu11/QV15k4sxSZ0pXnIrH0yeU/tlNo4J4qC2lQY44DkQSN4b7ssRp+SEJRURGHxfVtSiCN/zY35Rg/hf9DAqly67sauaDHKSVjo+ufPB3O7GcbOPpFI9T5Nl3UXjbxw2RwsbVFSfhKUCR3AjSfi968hsmUCrzeajTn4skzaYKsW50m/BbVLR08YnTAU08q541tGpXZpYr2UOglAyo6YMCu7PygSWBYzF5ZXTk/YxJFx0WKGY1Kl03cLNQcwJAK7CuzfEWoATATMOvNht/Jt8iokpJZp1kQH8z1GXqtKXw7+IXMG1BI3MfI3+y38iFqRyuRXcTY8y4MdRPi78B7FpFAExW8DDTgf/16ISwcifxg9DvnUMWTrYWcuTvC5F0xRkmb+USm+LOlQWBNzA/VHzVrRDqTb9cyL1ckyhRXynXzUoC6KafiL2fCXyQRKJSOHbc44wFE2SSQ++31Lwzfi4jIhthzZ5Ki57eHc3xBkLlAV7wWYvRB8Lql14drRdk4nj57tfb1wfysRhD9Gr9efqtu1tD0iWTtPlIRIq/TLlPa1MLGdFAAAA==" alt="Samsung Galaxy S24 Ultra" width="300px">
+                        <h3>Samsung Galaxy S24 Ultra</h3>
+                        <p>26.990.000 ₫</p>
+                    </article>
+                </li>
+                <li>
+                    <article class="product-card">
+                        <img src="https://cdn2.cellphones.com.vn/insecure/rs:fill:0:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/x/i/xiaomi-14-ultra_14_.png" alt="Xiaomi 14 Ultra" width="300px">
+                        <h3>Xiaomi 14 Ultra</h3>
+                        <p>21.990.000 ₫</p>
+                    </article>
+                </li>
+            </ul>
+        </aside>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer> <!-- footer: chứa thông tin chân trang, bản quyền, liên hệ -->
+        <div class="footer-links"> <!-- div: nhóm các liên kết footer -->
+            <ul>
+                <li><a href="/about">Giới thiệu</a></li>
+                <li><a href="/privacy">Chính sách bảo mật</a></li>
+                <li><a href="/terms">Điều khoản sử dụng</a></li>
+                <li><a href="/contact">Liên hệ</a></li>
+            </ul>
+        </div>
+        <div class="copyright"> <!-- div: bản quyền -->
+            <p>&copy; 2026 Công ty TNHH Bán lẻ. Tất cả quyền được bảo lưu.</p> <!-- p: đoạn văn bản copyright -->
+        </div>
+    </footer>
+
+</body>
+</html>
