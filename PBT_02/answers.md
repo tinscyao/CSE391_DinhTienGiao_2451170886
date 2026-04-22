@@ -144,48 +144,72 @@ Mục đích: Dùng khi hình ảnh là một nội dung độc lập (giống n
 Ví dụ 1: Ảnh chi tiết sản phẩm trong trang mô tả, kèm chú thích về thông số (ví dụ: "Mặt lưng kính nhám của iPhone 16 Pro").
 
 Ví dụ 2: Biểu đồ so sánh giá trong một bài viết đánh giá thị trường, kèm dòng chú thích "Hình 1.1: Biến động giá smartphone phân khúc cao cấp 2026".
+
 Câu C1:
-Lỗi 1: Dòng 2 — Input "Tên" không có <label for> (accessibility kém)
-Sửa:
-<label for="name">Tên:</label>
-<input type="text" id="name" name="name" required>
 
-Lỗi 2: Dòng 4 — Input email thiếu name + không bắt buộc nhập
-Sửa:
-<label for="email">Email:</label>
-<input type="email" id="email" name="email" placeholder="Email của bạn" required>
+    Lỗi 1: Dòng 2 — Input "Tên" không có <label for> (accessibility kém)
+    Sửa:
+    <label for="name">Tên:</label>
+    <input type="text" id="name" name="name" required>
 
-Lỗi 3: Dòng 6 — Input password không có label (accessibility)
-Sửa:
-<label for="password">Mật khẩu:</label>
-<input type="password" id="password" name="password" required>
+    Lỗi 2: Dòng 4 — Input email thiếu name + không bắt buộc nhập
+    Sửa:
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="Email của bạn" required>
 
-Lỗi 4: Dòng 7 — Input "Nhập lại mật khẩu" không có label + không phân biệt
-Sửa:
-<label for="confirm-password">Nhập lại mật khẩu:</label>
-<input type="password" id="confirm-password" name="confirm_password" required>
+    Lỗi 3: Dòng 6 — Input password không có label (accessibility)
+    Sửa:
+    <label for="password">Mật khẩu:</label>
+    <input type="password" id="password" name="password" required>
 
-Lỗi 5: Dòng 9 — Phone dùng type="text" (sai semantic)
-Sửa:
-<label for="phone">Phone:</label>
-<input type="tel" id="phone" name="phone" placeholder="0901234567" required>
+    Lỗi 4: Dòng 7 — Input "Nhập lại mật khẩu" không có label + không phân biệt
+    Sửa:
+    <label for="confirm-password">Nhập lại mật khẩu:</label>
+    <input type="password" id="confirm-password" name="confirm_password" required>
 
-Lỗi 6: Dòng 9 — Không nên dùng value làm dữ liệu mặc định (UX kém)
-Sửa: chuyển sang placeholder (đã sửa ở trên)
+    Lỗi 5: Dòng 9 — Phone dùng type="text" (sai semantic)
+    Sửa:
+    <label for="phone">Phone:</label>
+    <input type="tel" id="phone" name="phone" placeholder="0901234567" required>
 
-Lỗi 7: Dòng 11 — <select> không có label + thiếu name
-Sửa:
-<label for="city">Thành phố:</label>
-<select id="city" name="city" required>
-    <option value="">-- Chọn --</option>
-    <option value="hn">Hà Nội</option>
-    <option value="hcm">TP.HCM</option>
-</select>
+    Lỗi 6: Dòng 9 — Không nên dùng value làm dữ liệu mặc định (UX kém)
+    Sửa: chuyển sang placeholder (đã sửa ở trên)
 
-Lỗi 8: Dòng 16 — Checkbox "đồng ý điều khoản" sai cấu trúc + thiếu input
-Sửa:
-<label>
-    <input type="checkbox" name="terms" required>
-    Tôi đồng ý điều khoản
-</label>
+    Lỗi 7: Dòng 11 — <select> không có label + thiếu name
+    Sửa:
+    <label for="city">Thành phố:</label>
+    <select id="city" name="city" required>
+        <option value="">-- Chọn --</option>
+        <option value="hn">Hà Nội</option>
+        <option value="hcm">TP.HCM</option>
+    </select>
 
+    Lỗi 8: Dòng 16 — Checkbox "đồng ý điều khoản" sai cấu trúc + thiếu input
+    Sửa:
+    <label>
+        <input type="checkbox" name="terms" required>
+        Tôi đồng ý điều khoản
+    </label>
+Câu C2:
+    1. Regex pattern
+        CMND/CCCD (đúng 12 chữ số): pattern="^\d{12}$"
+        Số tài khoản (10–15 chữ số): pattern="^\d{10,15}$"
+    2. HTML5 validation có đủ an toàn cho ngân hàng không?
+    KHÔNG 
+    Lý do:
+    HTML5 validation chỉ chạy ở frontend (trình duyệt)
+    Người dùng có thể:
+    Tắt validation
+    Sửa request bằng Postman hoặc Burp Suite
+    Gửi request trực tiếp lên server
+     Nghĩa là: server vẫn có thể nhận dữ liệu sai / độc hại
+    Trong hệ thống ngân hàng:
+    Validation frontend = trải nghiệm người dùng
+    Validation backend = bảo mật thật sự   
+    3 loại validation HTML5 KHÔNG làm được:
+    So sánh giữa nhiều field
+    (ví dụ: xác nhận mật khẩu, ngày bắt đầu < ngày kết thúc)
+    Kiểm tra dữ liệu với server / database
+    (ví dụ: email đã tồn tại, CMND đã đăng ký chưa)
+    Validation theo logic phức tạp / ngữ cảnh
+    (ví dụ: chặn email tạm, PIN yếu như 123456)
