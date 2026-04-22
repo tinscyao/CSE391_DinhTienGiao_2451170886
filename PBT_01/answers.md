@@ -113,3 +113,10 @@ Thẻ <form>
     type="text": Để người dùng nhập từ khóa.
     type="button" hoặc type="submit": Cho nút bấm tìm kiếm (biểu tượng kính lúp).
     Đôi khi có thẻ <input type="hidden">: Dùng để gửi các tham số ẩn như mã định danh hoặc nguồn truy cập mà người dùng không nhìn thấy.
+
+câu C2:
+    Thứ nhất là SEO: mấy thẻ như <header>, <nav>, <article> giúp Google hiểu cấu trúc trang rõ hơn. Nếu toàn <div> thì nội dung chính, menu hay footer đều giống nhau → khó index tốt.
+    Thứ hai là Accessibility: người dùng dùng screen reader sẽ dựa vào semantic HTML để di chuyển nhanh trong trang (ví dụ nhảy đến menu hoặc nội dung chính). Nếu chỉ dùng <div> thì gần như mất hết lợi ích này, lại phải thêm ARIA khá rắc rối.
+    Ví dụ đơn giản: làm trang blog. Nếu bạn dùng <article> cho mỗi bài viết, <h1> cho tiêu đề thì cả Google và screen reader đều hiểu đây là một bài độc lập → dễ đọc, dễ tìm hơn. Còn nếu chỉ là <div class="post"> thì về mặt máy móc nó không “biết” đây là cái gì.
+    Tuy nhiên, không phải lúc nào cũng cần semantic. Những phần chỉ để chia layout như wrapper, flexbox, grid, hoặc animation thì dùng <div> là hợp lý.
+    Nói ngắn gọn: <div> không sai, nhưng dùng hết mọi thứ bằng <div> thì giống như viết code không có kiểu dữ liệu — vẫn chạy, nhưng khó hiểu và khó tối ưu.
