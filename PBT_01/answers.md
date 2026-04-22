@@ -91,3 +91,25 @@ Danh sách các lối:
     Lỗi 10: Dòng 25 — Bảng thiếu <thead> và <tbody> — Thêm semantic table
     Lỗi 11: Dòng 36 — Dùng 2 thẻ <main> — Chỉ được dùng 1, đổi cái thứ 2 thành <aside>
     Lỗi 12: Dòng 41 — Thẻ <p> trong footer không đóng — Thêm </p>
+Câu 4:
+senmantic HTML5:
+    Thẻ <header>: * Vị trí: Nằm ngay đầu tiên trong thẻ <body>, bao bọc toàn bộ khu vực nhận diện thương hiệu.
+    Nội dung: Đóng vai trò là "vùng chứa giới thiệu", bao gồm Logo Tiki, thanh Search và cụm điều hướng tài khoản/giỏ hàng.
+    Thẻ <nav>:
+    Vị trí: Thường nằm dưới thanh tìm kiếm hoặc bên trong menu danh mục bên trái.
+    Nội dung: Chứa các đường link điều hướng quan trọng giúp người dùng di chuyển giữa các danh mục sản phẩm chính.
+    Thẻ <footer>:
+    Vị trí: Nằm ở cuối cùng của trang web (cuộn hết tab Elements sẽ thấy).
+    Nội dung: Chứa các thông tin về chính sách, địa chỉ công ty và các liên kết mạng xã hội.
+Thẻ <table>
+    Nội dung hiển thị: Đây là bảng dữ liệu cấu trúc mô tả các thuộc tính kỹ thuật của sản phẩm (ví dụ: Dung lượng PIN, Chipset, Độ phân giải màn hình).
+    Cấu trúc kỹ thuật: * Phần lớn các bảng trên Tiki hiện nay sử dụng cấu trúc <tbody> trực tiếp để liệt kê các dòng <tr> mà không có tiêu đề cột rõ ràng (<thead>), vì bảng này chỉ gồm 2 cột (Tên thuộc tính - Giá trị).
+Thẻ <form>
+    Vị trí: Nằm trong khu vực trung tâm của thẻ <header>.
+    Thuộc tính kỹ thuật:
+    action: /search (Giá trị này xác định nơi dữ liệu sẽ được gửi đến máy chủ để xử lý).
+    method: GET (Dữ liệu tìm kiếm sẽ được hiển thị ngay trên thanh địa chỉ URL, ví dụ: q=iphone).
+    Các loại Input type được dùng:
+    type="text": Để người dùng nhập từ khóa.
+    type="button" hoặc type="submit": Cho nút bấm tìm kiếm (biểu tượng kính lúp).
+    Đôi khi có thẻ <input type="hidden">: Dùng để gửi các tham số ẩn như mã định danh hoặc nguồn truy cập mà người dùng không nhìn thấy.
