@@ -1,0 +1,29 @@
+/* 1. Element Selector (0,0,1) */
+p { color: gray; }
+
+/* 2. Class Selector (0,1,0) */
+.text { color: silver; }
+
+/* 3. Attribute Selector (0,1,0) - Bằng điểm class, nhưng nằm sau nên sẽ thắng .text */
+[id="demo"] { color: maroon; }
+
+/* 4. Class + Element (0,1,1) */
+p.text { color: olive; }
+
+/* 5. Hai Classes (0,2,0) */
+.text.highlight { color: orange; }
+
+/* 6. ID Selector (1,0,0) */
+#demo { color: blue; }
+
+/* 7. ID + Element (1,0,1) */
+p#demo { color: green; }
+
+/* 8. ID + Class (1,1,0) */
+#demo.text { color: purple; }
+
+/* 9. ID + Class + Element (1,1,1) */
+p#demo.highlight { color: red; }
+
+/* 10. ID + 2 Classes + 2 Elements (1,2,2) */
+body p#demo.text.highlight { color: navy; }
