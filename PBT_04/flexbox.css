@@ -1,0 +1,81 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* chia 3 phần */
+    align-items: center; /* căn giữa dọc */
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+}
+
+/* Menu giữa */
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.nav-menu li {
+    margin: 0 15px; /* cách đều */
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Hover */
+.nav-menu a:hover {
+    color: orange;
+    text-decoration: underline;
+}
+
+/* Nút bên phải */
+.nav-buttons button {
+    margin-left: 10px;
+    padding: 5px 10px;
+}
+
+/* ===== PRODUCT GRID ===== */
+.container {
+    padding: 20px;
+}
+
+/* Grid */
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Card */
+.card {
+    flex: 0 0 calc(25% - 20px); /* 4 cột */
+    border: 1px solid #ccc;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* Ảnh */
+.card img {
+    width: 100%;
+}
+
+/* Nút mua xuống đáy */
+.card button {
+    margin-top: auto;
+    padding: 8px;
+}
+
+/* Hover card */
+.card:hover {
+    transform: translateY(-5px);
+}
