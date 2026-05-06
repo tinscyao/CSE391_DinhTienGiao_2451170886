@@ -1,0 +1,60 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== LAYOUT CHÍNH ===== */
+.layout {
+    display: grid;
+
+    /* 3 cột: sidebar - main - ads */
+    grid-template-columns: 200px 1fr 200px;
+
+    /* dùng area cho dễ nhìn */
+    grid-template-areas:
+        "header header header"
+        "hero   hero   hero"
+        "sidebar main ads"
+        "footer footer footer";
+
+    gap: 10px;
+    padding: 10px;
+}
+
+/* ===== GÁN AREA ===== */
+.header { grid-area: header; background: #ccc; padding: 20px; }
+.hero   { grid-area: hero; background: #ddd; padding: 20px; }
+.sidebar{ grid-area: sidebar; background: #eee; padding: 20px; }
+.main   { grid-area: main; }
+.ads    { grid-area: ads; background: #eee; padding: 20px; }
+.footer { grid-area: footer; background: #ccc; padding: 20px; }
+
+/* ===== HERO BONUS ===== */
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+/* card nổi bật span 2 cột */
+.featured {
+    background: orange;
+    padding: 20px;
+    grid-column: span 2;
+}
+
+/* ===== MAIN GRID CON ===== */
+.products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+/* Card */
+.card {
+    background: white;
+    border: 1px solid #ccc;
+    padding: 20px;
+}
