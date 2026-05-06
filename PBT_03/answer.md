@@ -112,3 +112,41 @@ Giải thích: Thuộc tính style viết trực tiếp trong thẻ HTML (Inline
 Kết quả: Màu đen (Black).
 
 Giải thích: Từ khóa !important là quyền năng cao nhất trong CSS. Nó sẽ ghi đè lên tất cả các quy tắc về độ ưu tiên khác, bao gồm cả ID selector và Inline Style.
+
+B2:
+
+Hộp 1 (content-box): Chiều rộng thực tế = 350px
+
+Tính toán: 300 (width) + 20 (padding-left) + 20 (padding-right) + 5 (border-left) + 5 (border-right) = 350px.
+
+Hộp 2 (border-box): Chiều rộng thực tế = 300px
+
+Tính toán: Tổng toàn bộ đã được gói gọn trong 300px. Phần nội dung thực tế (content) chỉ còn 250px.
+
+Giải thích sự khác biệt:
+
+Với content-box, kích thước bạn đặt cho width chỉ là phần lõi chứa nội dung, padding và border bị đẩy ra ngoài làm hộp to lên.
+
+Với border-box, kích thước width là kích thước cuối cùng của hộp; trình duyệt tự động co phần content lại để "nhường chỗ" cho padding và border.
+
+Câu B3:
+Thứ tự  Selector                SpecificityScore    Màu sắc
+1         p                       (0, 0, 1)           Gray
+
+2       .text                      (0, 1, 0)           Silver
+
+3     [id="demo"]                   (0, 1, 0)         Maroon
+
+4       p.text                      (0, 1, 1)          Olive
+
+5    .text.highlight                 (0, 2, 0)          Orange
+
+6       #demo                        (1, 0, 0)          Blue
+
+7       p#demo                        (1, 0, 1)         Green
+
+8       #demo.text                    (1, 1, 0)       Purple
+
+9   p#demo.highlight                  (1, 1, 1)         Red
+
+10  body p#demo.text.highlight        (0, 1, 2, 2)        Navy
