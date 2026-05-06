@@ -150,3 +150,7 @@ Thứ tự  Selector                SpecificityScore    Màu sắc
 9   p#demo.highlight                  (1, 1, 1)         Red
 
 10  body p#demo.text.highlight        (0, 1, 2, 2)        Navy
+
+2. Kết quả hiển thịMàu sắc: Phần tử hiển thị màu Navy (xanh biển đậm).  Tại sao: Vì selector body p#demo.text.highlight có điểm số Specificity cao nhất (1 ID, 2 Classes, 2 Elements). Trong CSS, trình duyệt ưu tiên quy tắc có trọng số lớn nhất bất kể vị trí của nó trong file.
+
+ 3. Thay đổi thứ tự RulesKết quả có đổi không?Không đổi: Đối với các rule có điểm Specificity khác nhau. Quy tắc cao điểm hơn vẫn luôn thắng.  Có đổi: Nếu hai rule có cùng điểm số (ví dụ rule số 2 và số 3). Khi đó, quy tắc nào được viết sau cùng trong file CSS sẽ được áp dụng (luật Cascade - ưu tiên từ trên xuống dưới).  
