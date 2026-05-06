@@ -60,3 +60,60 @@ Câu A2:
     (gap 10px)
 [ Item 7 ]
 
+Câu C1:
+Navigation bar (logo + menu + buttons) → Dùng: Flexbox
+Giải thích: Đây là layout 1 hàng ngang. Flexbox giúp căn trái – giữa – phải dễ bằng justify-content. Không cần Grid vì không có nhiều hàng/cột.
+
+Lưới ảnh Instagram (3 cột đều, số lượng không biết) → Dùng: Grid
+Giải thích: Layout dạng lưới nhiều hàng và cột. Grid chia 3 cột đều nhau dễ dàng và tự xuống dòng khi thêm ảnh. Flex làm được nhưng khó kiểm soát đều cột.
+
+Layout blog (main content + sidebar) → Dùng: Grid
+Giải thích: Có 2 cột rõ ràng (nội dung + sidebar). Grid cho phép chia tỉ lệ cột trực tiếp (ví dụ 3fr – 1fr) và dễ mở rộng thêm các phần khác.
+
+Footer với 4 cột thông tin → Dùng: Grid
+Giải thích: Có nhiều cột song song. Grid chia đều các cột đơn giản và dễ responsive (chuyển 4 → 2 → 1 cột).
+
+Card sản phẩm (ảnh trên, text giữa, nút dưới — nút dính đáy) → Dùng: Flexbox
+Giải thích: Layout theo chiều dọc (1 chiều). Flexbox dùng flex-direction: column và margin-top: auto để đẩy nút xuống đáy rất đơn giản.
+
+Câu C2:
+Lỗi 1: Card không đều chiều cao, nút “Mua” nhảy
+Nguyên nhân
+Card đang là block bình thường
+Nội dung mỗi card dài ngắn khác nhau → chiều cao khác nhau
+Nút không bị “ghim xuống đáy”
+Cách sửa
+
+ → Dùng Flexbox cho từng card theo cột + đẩy nút xuống đáy bằng margin-top: auto
+
+ 
+ Kết quả sau sửa
+Card cao bằng nhau
+Nút luôn nằm đáy
+Không bị “nhảy layout”
+
+Lỗi 2: Hero không căn giữa ngang + dọc
+Nguyên nhân
+display: flex nhưng thiếu căn giữa
+text-align: center chỉ căn chữ ngang, không căn layout
+Cách sửa
+
+→ Thêm:
+
+justify-content: center
+align-items: center
+
+Kết quả sau sửa
+Nội dung nằm chính giữa màn hình
+Cả ngang + dọc đều căn chuẩn
+
+Lỗi 3: Sidebar bị co khi content dài
+Nguyên nhân
+Flex mặc định cho phép co lại (shrink)
+Sidebar không bị chặn width cứng
+Cách sửa
+
+→ Cấm sidebar co lại bằng flex-shrink: 0
+Kết quả sau sửa
+Sidebar giữ nguyên 250px
+Content dài bao nhiêu cũng không làm sidebar méo
