@@ -1,0 +1,87 @@
+/* 1. Selector toàn cục - Thiết lập box-sizing */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* 2. Element Selector - Định dạng Body */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* 3. ID Selector - Định dạng Header với Background Gradient */
+#app-header {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: #ffffff;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+/* 4. Descendant Selector - Định dạng các link trong Nav */
+nav a {
+    text-decoration: none;
+    color: #cbdcf7;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+/* 5. Pseudo-class Selector (:hover) - Hiệu ứng hover cho link */
+nav a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* 6. Class Selector - Định dạng link đang Active */
+nav a.active {
+    color: #ffeb3b;
+    border-bottom: 2px solid #ffeb3b;
+    padding-bottom: 5px;
+}
+
+/* 7. Table Kỹ năng */
+table {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    border-collapse: collapse; /* Gộp viền */
+    background: white;
+}
+
+table th, table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+/* Header row của table */
+table tr:first-child, thead tr {
+    background-color: #1e3c72;
+    color: #ffffff;
+}
+
+/* Zebra striping - Dòng chẵn đổi màu */
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Hover row - Hiệu ứng khi di chuột vào dòng */
+table tr:hover {
+    background-color: #e2e6ea;
+    cursor: default;
+}
+
+/* 8. Footer định dạng theo yêu cầu */
+footer {
+    background-color: #222;
+    color: #bbb;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
