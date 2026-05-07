@@ -154,3 +154,90 @@ Thứ tự  Selector                SpecificityScore    Màu sắc
 2. Kết quả hiển thịMàu sắc: Phần tử hiển thị màu Navy (xanh biển đậm).  Tại sao: Vì selector body p#demo.text.highlight có điểm số Specificity cao nhất (1 ID, 2 Classes, 2 Elements). Trong CSS, trình duyệt ưu tiên quy tắc có trọng số lớn nhất bất kể vị trí của nó trong file.
 
  3. Thay đổi thứ tự RulesKết quả có đổi không?Không đổi: Đối với các rule có điểm Specificity khác nhau. Quy tắc cao điểm hơn vẫn luôn thắng.  Có đổi: Nếu hai rule có cùng điểm số (ví dụ rule số 2 và số 3). Khi đó, quy tắc nào được viết sau cùng trong file CSS sẽ được áp dụng (luật Cascade - ưu tiên từ trên xuống dưới).  
+
+
+ Câu C2:
+ "Sản phẩm A" (h2)
+
+font-size = 20px
+Vì:
+
+.card .title { font-size: 20px; }
+
+áp trực tiếp vào h2.
+
+Có các giá trị khác:
+
+body { font-size: 16px; }
+.container { font-size: 14px; }
+
+nhưng đó là inheritance → rule áp trực tiếp luôn thắng inheritance.
+
+color = green
+Các rule:
+
+.card { color: blue; }
+#featured .title { color: red; }
+.highlight { color: green !important; }
+
+.highlight có !important → ưu tiên cao nhất.
+
+"Mô tả sản phẩm" (p trong featured card)
+
+color = blue
+
+Các rule:
+
+.card { color: blue; }
+.card p { color: inherit; }
+
+p nhận:
+
+color: inherit;
+
+→ kế thừa từ .card
+
+.card có:
+
+color: blue;
+
+Không có rule nào override thêm.
+
+"Sản phẩm B" (h2)
+
+font-size = 20px
+
+Vì:
+
+.card .title { font-size: 20px; }
+
+áp trực tiếp vào h2.
+
+color = blue
+
+Các rule:
+
+.card { color: blue; }
+
+Không có:
+
+#featured .title
+
+và cũng không có .highlight.
+
+h2 không có color riêng → inherit từ .card.
+
+"Mô tả sản phẩm B" (p.highlight)
+
+color = green
+
+Các rule:
+
+.card { color: blue; }
+.card p { color: inherit; }
+.highlight { color: green !important; }
+
+.highlight có !important
+→ override toàn bộ các rule thường.
+
+Kết luận: green
