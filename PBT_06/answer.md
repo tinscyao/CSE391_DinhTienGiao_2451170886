@@ -49,81 +49,64 @@ Câu A1:
 
 Câu C1:
 
-# So sánh CSS thuần vs TailwindCSS
 
-## 1. HTML File Size
 
-### CSS thuần
-- HTML ngắn hơn
-- Style viết riêng trong file CSS
+## 1. Đổi màu `$primary` sang `#E63946`
 
-Ví dụ:
-```html
-<div class="container">
+### Công cụ cần:
+- Node.js
+- npm
+- SASS
+
+### Quy trình:
+
+Cài Bootstrap + Sass:
+```bash
+npm install bootstrap sass
 ```
 
-### TailwindCSS
-- HTML dài hơn do viết utility class trực tiếp
-
-Ví dụ:
-```html
-<div class="grid grid-cols-1 gap-5 p-5">
+Tạo file:
+```scss
+custom.scss
 ```
 
-→ Tailwind làm HTML dài hơn nhưng giảm CSS riêng.
+Sửa biến trước khi import Bootstrap:
+```scss
+$primary: #E63946;
+
+@import "bootstrap/scss/bootstrap";
+```
+
+Compile:
+```bash
+sass custom.scss custom.css
+```
+
+Sau đó link:
+```html
+<link rel="stylesheet" href="custom.css">
+```
 
 ---
 
-## 2. Maintainability
+## 2. Tại sao không nên override trực tiếp `.btn-primary`?
 
-### CSS thuần
-Ưu điểm:
-- HTML sạch
-- Dễ nhìn cấu trúc
-
-Nhược điểm:
-- CSS file lớn dần
-- Dễ conflict class
-- Sửa responsive phải tìm nhiều nơi
-
-### TailwindCSS
-Ưu điểm:
-- Sửa trực tiếp trên HTML
-- Responsive rõ ràng:
-```html
-md:grid-cols-2
-xl:grid-cols-3
-```
-
-Nhược điểm:
-- HTML nhiều class
-- Ban đầu hơi khó đọc
-
----
-
-## 3. Reusability
-
-### CSS thuần
-- Tái sử dụng bằng class:
+Ví dụ không nên:
 ```css
-.card{
-    padding:20px;
+.btn-primary{
+    background:red;
 }
 ```
 
-### TailwindCSS
-- Tái sử dụng bằng:
-  - component
-  - @apply
+Vì:
+- Chỉ sửa riêng button
+- Các component khác dùng `$primary` không đổi màu
+- Dễ conflict/update lỗi khi Bootstrap nâng version
 
-Ví dụ:
-```css
-.card{
-    @apply p-5 rounded-lg shadow-md;
-}
-```
-
-→ Tailwind tái sử dụng nhanh hơn khi làm UI lớn.
+Dùng SASS variables tốt hơn vì:
+- Đồng bộ toàn hệ thống
+- Navbar, alert, button, badge... cùng đổi màu
+- Dễ maintain và scale project
 
 Câu C2:
 
