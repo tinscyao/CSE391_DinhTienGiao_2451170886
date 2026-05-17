@@ -80,3 +80,37 @@ true + true           // 2
   - Dấu `-` chỉ dùng cho toán học
   - `"5"` được ép sang number
   - Kết quả: `2`
+
+Câu A3:
+
+# A3 — == vs ===
+
+```js
+5 == "5"                  // true
+5 === "5"                 // false
+
+null == undefined         // true
+null === undefined        // false
+
+NaN == NaN                // false
+
+0 == false                // true
+0 === false               // false
+
+"" == false               // true
+```
+
+## Quy tắc
+
+Nên dùng:
+
+```js
+===
+```
+
+Vì:
+
+- `===` so sánh cả giá trị và kiểu dữ liệu
+- Không ép kiểu tự động
+- Ít gây bug hơn
+- Dễ đọc và dễ kiểm soát hơn
