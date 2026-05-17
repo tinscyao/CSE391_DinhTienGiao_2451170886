@@ -114,3 +114,56 @@ Vì:
 - Không ép kiểu tự động
 - Ít gây bug hơn
 - Dễ đọc và dễ kiểm soát hơn
+
+Câu A4:
+
+# A4 — Truthy & Falsy
+
+## Các giá trị Falsy trong JavaScript
+
+```js
+false
+0
+-0
+0n
+""
+null
+undefined
+NaN
+```
+
+Mọi giá trị khác đều là Truthy.
+
+---
+
+## Dự đoán kết quả
+
+```js
+if ("0") console.log("A");      // In
+if ("") console.log("B");       // Không in
+if ([]) console.log("C");       // In
+if ({}) console.log("D");       // In
+if (null) console.log("E");     // Không in
+if (0) console.log("F");        // Không in
+if (-1) console.log("G");       // In
+if (" ") console.log("H");      // In
+```
+
+## Kết quả được in ra
+
+```js
+A
+C
+D
+G
+H
+```
+
+## Giải thích
+
+- `"0"` là chuỗi khác rỗng → Truthy
+- `""` là chuỗi rỗng → Falsy
+- `[]` và `{}` luôn là Truthy
+- `0` là Falsy
+- `-1` khác 0 → Truthy
+- `" "` chứa khoảng trắng nên không rỗng → Truthy
