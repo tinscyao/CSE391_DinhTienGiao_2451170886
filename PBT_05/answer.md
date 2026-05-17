@@ -141,3 +141,97 @@ Câu C1:
 * **Font size (Kích thước chữ):**
   * Có thay đổi rõ rệt. Trên Desktop, tiêu đề tin lớn (H1) thường là `32px` - `40px` để gây chú ý. Xuống Mobile, font-size tiêu đề giảm xuống còn khoảng `22px` - `24px` để tránh chiếm hết màn hình và không bị xuống dòng quá nhiều.
 
+Câu C2:
+
+Responsive Strategy – Trang Đặt Bàn Nhà Hàng
+1. Mobile Layout (375px)
+Wireframe bố cục
+----------------
+LOGO   ☰
+Hotline
+----------------
+ HERO IMAGE
+----------------
+ MENU IMAGES
+ [1 cột]
+ 🍜
+ 🍕
+ 🍣
+ ...
+----------------
+ BOOKING FORM
+ Date
+ Time
+ Guests
+ Notes
+ [Book Table]
+----------------
+ GOOGLE MAP
+----------------
+ FOOTER
+----------------
+Phân tích
+Navigation:
+Dùng hamburger menu.
+Grid ảnh:
+1 cột.
+Form:
+Đặt dưới gallery ảnh.
+Hidden:
+Có thể ẩn map lớn hoặc rút gọn chiều cao.
+Ẩn menu phụ/header phụ.
+2. Tablet Layout (768px)
+Wireframe bố cục
+--------------------------------
+LOGO      MENU      HOTLINE
+--------------------------------
+         HERO IMAGE
+--------------------------------
+ 🍜   🍕   🍣
+ 🍔   🥗   🍰
+(2-3 columns grid)
+--------------------------------
+ BOOKING FORM
+--------------------------------
+ GOOGLE MAP
+--------------------------------
+ FOOTER
+--------------------------------
+Phân tích
+Grid ảnh:
+2 hoặc 3 cột.
+Form:
+Vẫn nằm dưới gallery.
+Google Maps:
+Hiển thị đầy đủ dưới form.
+Navigation:
+Có thể hiện menu ngang thay vì hamburger.
+3. Desktop Layout (1440px)
+Wireframe bố cục
+----------------------------------------------------
+ LOGO      MENU NAVIGATION        HOTLINE
+----------------------------------------------------
+                    HERO
+----------------------------------------------------
+
+ FOOD GRID            BOOKING FORM
+ (3 columns)          Date
+ 🍜 🍕 🍣             Time
+ 🍔 🥗 🍰             Guests
+                      Notes
+                      [BOOK]
+
+----------------------------------------------------
+ GOOGLE MAP
+----------------------------------------------------
+ FOOTER
+----------------------------------------------------
+Phân tích
+Layout:
+2 cột.
+Food grid:
+3 cột.
+Booking form:
+Đặt bên phải như sidebar.
+Sidebar:
+Có thể xem booking form là sidebar cố định.
