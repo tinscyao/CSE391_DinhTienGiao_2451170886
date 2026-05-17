@@ -111,55 +111,78 @@ Dùng SASS variables tốt hơn vì:
 Câu C2:
 
 
-## 1. Tại sao Tailwind CSS cuối cùng nhỏ hơn Bootstrap?
+## 1. Số dòng CSS cần viết
 
-- Bootstrap chứa sẵn rất nhiều component/class dù có dùng hay không.
-- Tailwind chỉ build các utility class thực sự xuất hiện trong HTML.
-
-→ Vì vậy file CSS production thường nhỏ hơn Bootstrap.
-
----
-
-## 2. Tailwind PurgeCSS / JIT là gì?
-
-### PurgeCSS
-- Quét HTML/JS files
-- Xóa các class không được sử dụng
+### CSS thuần
+- Phải tự viết:
+  - flex/grid
+  - responsive
+  - navbar
+  - card
+  - spacing
+- Thường nhiều dòng CSS hơn
 
 Ví dụ:
-```html
-<div class="flex p-4"></div>
-```
-
-→ chỉ giữ:
 ```css
-.flex{}
-.p-4{}
+.header{
+    display:flex;
+    justify-content:space-between;
+}
 ```
 
-### JIT (Just In Time)
-- Sinh CSS ngay khi phát hiện class được dùng
-- Không generate toàn bộ utility từ đầu
+### Bootstrap
+- Chủ yếu dùng class có sẵn:
+```html
+<nav class="navbar navbar-expand-lg">
+```
 
-→ build nhanh hơn và CSS nhỏ hơn.
+→ Gần như không cần tự viết CSS.
 
 ---
 
-## 3. Khi nào KHÔNG nên dùng TailwindCSS?
+## 2. Thời gian phát triển
 
-### Trường hợp 1:
-Project nhỏ/simple website
+### CSS thuần
+- Chậm hơn
+- Phải tự responsive và test layout
 
-- Tailwind setup hơi dư thừa
-- CSS thuần hoặc Bootstrap nhanh hơn
+### Bootstrap
+- Nhanh hơn nhiều
+- Có sẵn:
+  - navbar
+  - card
+  - modal
+  - grid system
 
-### Trường hợp 2:
-Team chưa quen utility-first
+→ Phù hợp làm prototype hoặc deadline ngắn.
 
-- HTML quá nhiều class
-- Khó đọc với người mới
+---
 
-Ví dụ:
-```html
-<div class="flex items-center justify-between p-4 bg-white rounded shadow">
-```
+## 3. Khả năng tùy biến
+
+### CSS thuần
+- Tùy biến rất cao
+- Kiểm soát toàn bộ UI
+
+### Bootstrap
+- Dễ bị giống template Bootstrap
+- Custom sâu hơi khó nếu không dùng SASS
+
+---
+
+## 4. Khi nào NÊN dùng Bootstrap?
+
+- Dự án cần làm nhanh
+- Admin dashboard
+- Website CRUD
+- Team frontend nhỏ
+- Prototype/MVP
+
+---
+
+## 5. Khi nào KHÔNG NÊN dùng Bootstrap?
+
+- UI design quá đặc biệt
+- Cần animation/custom design mạnh
+- Muốn tối ưu CSS rất nhỏ
+- Design system riêng
