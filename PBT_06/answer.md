@@ -124,3 +124,59 @@ Ví dụ:
 ```
 
 → Tailwind tái sử dụng nhanh hơn khi làm UI lớn.
+
+Câu C2:
+
+
+## 1. Tại sao Tailwind CSS cuối cùng nhỏ hơn Bootstrap?
+
+- Bootstrap chứa sẵn rất nhiều component/class dù có dùng hay không.
+- Tailwind chỉ build các utility class thực sự xuất hiện trong HTML.
+
+→ Vì vậy file CSS production thường nhỏ hơn Bootstrap.
+
+---
+
+## 2. Tailwind PurgeCSS / JIT là gì?
+
+### PurgeCSS
+- Quét HTML/JS files
+- Xóa các class không được sử dụng
+
+Ví dụ:
+```html
+<div class="flex p-4"></div>
+```
+
+→ chỉ giữ:
+```css
+.flex{}
+.p-4{}
+```
+
+### JIT (Just In Time)
+- Sinh CSS ngay khi phát hiện class được dùng
+- Không generate toàn bộ utility từ đầu
+
+→ build nhanh hơn và CSS nhỏ hơn.
+
+---
+
+## 3. Khi nào KHÔNG nên dùng TailwindCSS?
+
+### Trường hợp 1:
+Project nhỏ/simple website
+
+- Tailwind setup hơi dư thừa
+- CSS thuần hoặc Bootstrap nhanh hơn
+
+### Trường hợp 2:
+Team chưa quen utility-first
+
+- HTML quá nhiều class
+- Khó đọc với người mới
+
+Ví dụ:
+```html
+<div class="flex items-center justify-between p-4 bg-white rounded shadow">
+```
