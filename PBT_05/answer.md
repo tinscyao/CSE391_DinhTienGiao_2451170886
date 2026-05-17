@@ -117,3 +117,27 @@ $primary-color: blue;
 button{
     background: $primary-color;
 }
+
+Câu C1:
+
+
+## 2. Phân tích thay đổi giao diện
+
+* **Navigation (Thanh điều hướng):**
+  * **Desktop:** Hiện đầy đủ thanh menu ngang chứa các chuyên mục (Thời sự, Góc nhìn, Thế giới...).
+  * **Tablet:** Menu ngang bị thu hẹp, một số chuyên mục phụ chuyển vào nút ba sọc (Hamburger menu).
+  * **Mobile:** Menu ngang biến mất hoàn toàn, thay thế bằng nút **Hamburger menu** ở góc góc trên bên trái/phải để thu gọn.
+
+* **Lưới content (Grid System):**
+  * **Desktop:** Chia nhiều cột phức tạp (thường là 3 - 4 cột gồm: tin chính lớn, cụm tin phụ bên cạnh và cột quảng cáo/tin xem nhiều bên phải).
+  * **Tablet:** Rút gọn còn 2 cột (1 cột tin tức chính và 1 cột phụ).
+  * **Mobile:** Chuyển hoàn toàn về **1 cột** duy nhất theo chiều dọc, các tin xếp chồng lên nhau để dễ vuốt.
+
+* **Elements bị ẩn trên Mobile:**
+  * Toàn bộ banner quảng cáo dạng lớn ở hai bên rìa trang (cánh trang web).
+  * Các widget phụ như: Hộp thông tin giá vàng/thời tiết/tỷ giá (hoặc bị thu nhỏ diện tích).
+  * Cột "Xem nhiều nhất" hoặc "Bình luận nhiều nhất" ở thanh bên (Sidebar).
+
+* **Font size (Kích thước chữ):**
+  * Có thay đổi rõ rệt. Trên Desktop, tiêu đề tin lớn (H1) thường là `32px` - `40px` để gây chú ý. Xuống Mobile, font-size tiêu đề giảm xuống còn khoảng `22px` - `24px` để tránh chiếm hết màn hình và không bị xuống dòng quá nhiều.
+
