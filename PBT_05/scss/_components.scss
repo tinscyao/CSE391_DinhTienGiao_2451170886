@@ -1,0 +1,22 @@
+// SCSS Components Example
+.card {
+  @include card-shadow;
+  padding: $spacing-md;
+  background: #fff;
+  border-radius: 8px;
+  .card-image {
+    width: 100%;
+    overflow: hidden;
+  }
+  .card-title {
+    font-family: $font-primary;
+    font-size: 1.2rem;
+  }
+  &:hover {
+    transform: translateY(-8px);
+    @include card-shadow;
+  }
+  &.featured {
+    border: 2px solid $primary-color;
+  }
+}
