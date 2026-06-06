@@ -6,7 +6,7 @@ Kho lưu trữ này chứa các bài tập và dự án thực hành cho môn h�
 - **Họ và tên:** Đinh Tiến Giao
 - **Mã sinh viên:** 2451170886
 - **Lớp:** 66KTPM2
-- **Chuyên ngành:** Công nghệ Thông tin
+- **Chuyên ngành:** Kỹ Thuật Phần Mềm
 
 ## 💻 Ngôn ngữ & Công nghệ sử dụng
 Dự án được phát triển chủ yếu bằng các ngôn ngữ Front-end:
