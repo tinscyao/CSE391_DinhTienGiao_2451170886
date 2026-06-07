@@ -4,6 +4,7 @@
 
 - Họ và tên: Đinh Tiến Giao
 - Mã sinh viên: 2451170886
+- Lớp: 66KTPM2 
 - Môn học: Lập trình Web
 
 ## Nội dung bài thực hành
